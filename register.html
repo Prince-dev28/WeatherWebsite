@@ -1,0 +1,93 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <title>Register</title>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.6.0/css/all.min.css">
+    <link rel="shortcut icon" href="https://image.winudf.com/v2/image1/aW8ubW9iaWxpemUuYXBwLnRlY2huYXRpb25faWNvbl8xNTg0MDQ1OTc4XzAwMw/icon.png?w=184&fakeurl=1" type="image/x-icon">
+
+    <style>
+        body {
+            font-family: Arial;
+           background-color: #0d73e8;
+        }
+        .form-box {
+            width: 300px;
+            margin: 100px auto;
+            padding: 45px;
+            background: white;
+            border-radius: 8px;
+        }
+        input {
+            width: 92%;
+            padding: 10px;
+            margin: 8px 0;
+        }
+        button {
+            width: 100%;
+            padding: 10px;
+            background: #0078ff;
+            border: none;
+            color: white;
+            cursor: pointer;
+        }
+
+        @keyframes fadeIn {
+  from {
+    opacity: 0;
+    transform: translateY(30px);
+  }
+  to {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}
+
+        h2{
+            text-align: center;
+        }
+
+        img{
+            align-items: center;
+        }
+    </style>
+</head>
+<body>
+
+<div class="form-box">
+    <img src="https://image.winudf.com/v2/image1/aW8ubW9iaWxpemUuYXBwLnRlY2huYXRpb25faWNvbl8xNTg0MDQ1OTc4XzAwMw/icon.png?w=184&fakeurl=1" alt="" width="60px">
+    <h2>Register</h2>
+
+    <!-- FIXED: Added onsubmit -->
+    <form onsubmit="registerUser(); return false;">
+        <input type="text" id="regUser" placeholder="Name" required>
+        <input type="email" id="regEmail" placeholder="Email" required>
+        <input type="password" id="regPass" placeholder="Create Password" required>
+        <button type="submit">Sign Up</button>
+    </form>
+
+    <p>Already have an account? <a href="login.html">Login</a></p>
+</div>
+
+<script>
+function registerUser() {
+    let user = document.getElementById("regUser").value;
+    let email = document.getElementById("regEmail").value;
+    let pass = document.getElementById("regPass").value;
+
+    if (user === "" || email === "" || pass === "") {
+        alert("Please fill all fields");
+        return;
+    }
+
+    // Save user data using localStorage
+    localStorage.setItem("username", user);
+    localStorage.setItem("email", email);
+    localStorage.setItem("password", pass);
+
+    alert("Registration Successful!");
+    window.location.href = "login.html";
+}
+</script>
+
+</body>
+</html>
