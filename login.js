@@ -4,8 +4,6 @@ const errorMsg = document.getElementById('errorMsg');
 
 const users = [
   { username: "Prince", password: "267" },
-  { username: "Rishi", password: "296" },
-  { username: "Ritesh", password: "298" },
  
 ];
 
